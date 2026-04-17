@@ -1,0 +1,86 @@
+/* ── Car Wash Detail Page (Student 2) ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --blue: #2563EB; --bg: #F0F4FF; --card: #FFFFFF;
+  --text: #1E293B; --muted: #64748B;
+  --orange: #F59E0B; --radius: 12px;
+  --shadow: 0 4px 20px rgba(37,99,235,.10);
+}
+
+body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); }
+
+.navbar {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 1rem 2rem; background: var(--card);
+  box-shadow: 0 2px 12px rgba(0,0,0,.06); position: sticky; top: 0; z-index: 100;
+}
+.nav-brand { font-size: 1.3rem; font-weight: 700; color: var(--blue); }
+.nav-links  { display: flex; gap: 1.5rem; list-style: none; align-items: center; }
+.nav-links a { text-decoration: none; color: var(--muted); font-weight: 500; font-size: .95rem; transition: color .2s; }
+.nav-links a:hover { color: var(--blue); }
+.btn-logout { padding: .4rem 1rem; border-radius: 8px; background: #FEE2E2; color: #B91C1C !important; font-weight: 600; }
+.btn-logout:hover { background: #FECACA !important; }
+
+.container { max-width: 760px; margin: 0 auto; padding: 2.5rem 2rem; }
+
+.back-link {
+  display: inline-block; margin-bottom: 1.5rem;
+  color: var(--blue); text-decoration: none; font-weight: 600; font-size: .95rem;
+}
+.back-link:hover { text-decoration: underline; }
+
+.detail-card {
+  background: var(--card); border-radius: 20px;
+  box-shadow: var(--shadow); overflow: hidden;
+  display: grid; grid-template-columns: 200px 1fr;
+}
+
+.detail-icon {
+  background: linear-gradient(135deg, #EFF6FF, #DBEAFE);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 5rem;
+}
+
+.detail-content { padding: 2rem; }
+
+.badge {
+  display: inline-block; padding: .25rem .8rem;
+  border-radius: 20px; font-size: .8rem;
+  font-weight: 700; color: #fff; margin-bottom: 1rem;
+}
+
+.detail-content h1 { font-size: 1.8rem; font-weight: 800; margin-bottom: .8rem; }
+.detail-desc { color: var(--muted); line-height: 1.6; margin-bottom: 1.5rem; }
+
+.detail-meta {
+  display: flex; gap: 1.5rem; flex-wrap: wrap;
+  background: #F8FAFC; padding: 1rem; border-radius: 10px;
+  margin-bottom: 1.5rem;
+}
+.meta-item { display: flex; flex-direction: column; gap: .2rem; }
+.meta-label { font-size: .8rem; color: var(--muted); font-weight: 600; text-transform: uppercase; letter-spacing: .05em; }
+.meta-value { font-size: 1rem; font-weight: 700; color: var(--text); }
+.meta-value.price { color: var(--blue); font-size: 1.3rem; }
+
+.notice-box {
+  background: #FFFBEB; border: 1px solid #FDE68A;
+  border-radius: 10px; padding: .9rem 1rem;
+  color: #92400E; font-size: .9rem; margin-bottom: 1.5rem;
+}
+
+.btn-book {
+  display: inline-block; padding: .8rem 2rem;
+  background: var(--blue); color: #fff;
+  border-radius: 10px; text-decoration: none;
+  font-weight: 700; font-size: 1rem;
+  transition: background .2s, transform .15s;
+}
+.btn-book:hover { background: #1d4ed8; transform: translateY(-2px); }
+
+.footer { text-align: center; padding: 2rem; color: var(--muted); font-size: .9rem; border-top: 1px solid #e2e8f0; margin-top: 3rem; }
+
+@media (max-width: 600px) {
+  .detail-card { grid-template-columns: 1fr; }
+  .detail-icon { padding: 2rem; }
+}

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign Up — SparkleWash</title>
+  <link rel="stylesheet" href="../css/signup.css">
+</head>
+<body>
+
+  <div class="auth-wrapper">
+
+    <div class="auth-card">
+      <div class="auth-logo">
+        <span class="logo-icon">&#9992;</span>
+        <span class="logo-text">SparkleWash</span>
+      </div>
+
+      <h1>Create Account</h1>
+      <p class="auth-sub">Join SparkleWash and start booking today</p>
+
+      <!-- Alert messages (populated by JS from URL params) -->
+      <div id="alert" class="alert" style="display:none;"></div>
+
+      <form id="signupForm" action="../php/signup.php" method="POST" novalidate>
+
+        <div class="form-group">
+          <label for="name">Full Name</label>
+          <input type="text" id="name" name="name"
+                 placeholder="John Smith" autocomplete="name" required>
+          <span class="field-error" id="nameErr"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="email"
+                 placeholder="you@example.com" autocomplete="email" required>
+          <span class="field-error" id="emailErr"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="password">Password</label>
+          <div class="input-eye-wrap">
+            <input type="password" id="password" name="password"
+                   placeholder="At least 6 characters" required>
+            <button type="button" class="eye-btn" id="togglePwd">&#128065;</button>
+          </div>
+          <span class="field-error" id="pwdErr"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="confirm">Confirm Password</label>
+          <input type="password" id="confirm" name="confirm"
+                 placeholder="Repeat your password" required>
+          <span class="field-error" id="confirmErr"></span>
+        </div>
+
+        <button type="submit" class="btn-submit">Create Account</button>
+      </form>
+
+      <p class="auth-switch">Already have an account? <a href="login.html">Login</a></p>
+    </div>
+
+  </div>
+
+  <script src="../js/auth.js"></script>
+</body>
+</html>

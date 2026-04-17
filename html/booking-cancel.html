@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cancel Booking — SparkleWash</title>
+  <link rel="stylesheet" href="../css/booking-cancel.css">
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="nav-brand">&#9992; SparkleWash</div>
+    <ul class="nav-links">
+      <li><a href="../php/carwashes.php">Home</a></li>
+      <li><a href="../php/my-bookings.php">My Bookings</a></li>
+      <li><a href="../php/logout.php" class="btn-logout">Logout</a></li>
+    </ul>
+  </nav>
+
+  <main class="container">
+    <div class="cancel-card">
+      <div class="cancel-icon">&#10005;</div>
+      <h1>Cancel Booking</h1>
+      <p id="cancelMsg">Are you sure you want to cancel this booking?</p>
+
+      <div class="cancel-actions">
+        <a id="confirmCancel" href="#" class="btn-danger">Yes, Cancel It</a>
+        <a href="../php/my-bookings.php" class="btn-secondary">Keep Booking</a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <p>&copy; 2026 SparkleWash. All rights reserved.</p>
+  </footer>
+
+  <script>
+    /* Set the cancel link to include booking id from URL */
+    const id = new URLSearchParams(window.location.search).get('id') || '';
+    if (id) {
+      document.getElementById('confirmCancel').href =
+        '../php/booking-cancel.php?id=' + id;
+      document.getElementById('cancelMsg').textContent =
+        'Are you sure you want to cancel Booking #' + id + '?';
+    } else {
+      document.getElementById('confirmCancel').style.display = 'none';
+    }
+  </script>
+
+</body>
+</html>

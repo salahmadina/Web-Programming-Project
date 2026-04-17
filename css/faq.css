@@ -1,0 +1,70 @@
+/* ── FAQ Page (Student 2) ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --blue: #2563EB; --bg: #F0F4FF; --card: #FFFFFF;
+  --text: #1E293B; --muted: #64748B;
+  --radius: 12px; --shadow: 0 4px 20px rgba(37,99,235,.10);
+}
+
+body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); }
+
+.navbar {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 1rem 2rem; background: var(--card);
+  box-shadow: 0 2px 12px rgba(0,0,0,.06); position: sticky; top: 0; z-index: 100;
+}
+.nav-brand { font-size: 1.3rem; font-weight: 700; color: var(--blue); }
+.nav-links  { display: flex; gap: 1.5rem; list-style: none; align-items: center; }
+.nav-links a { text-decoration: none; color: var(--muted); font-weight: 500; font-size: .95rem; transition: color .2s; }
+.nav-links a:hover, .nav-links a.active { color: var(--blue); }
+.btn-logout { padding: .4rem 1rem; border-radius: 8px; background: #FEE2E2; color: #B91C1C !important; font-weight: 600; }
+.btn-logout:hover { background: #FECACA !important; }
+
+.container { max-width: 760px; margin: 0 auto; padding: 3rem 2rem; }
+
+.page-header { text-align: center; margin-bottom: 3rem; }
+.page-header h1 { font-size: 2.2rem; font-weight: 800; }
+.page-header p  { color: var(--muted); margin-top: .4rem; }
+
+.faq-list { display: flex; flex-direction: column; gap: 1rem; }
+
+.faq-item {
+  background: var(--card);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  transition: box-shadow .2s;
+}
+.faq-item:hover { box-shadow: 0 8px 28px rgba(37,99,235,.15); }
+
+.faq-item summary {
+  padding: 1.2rem 1.5rem;
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--text);
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  user-select: none;
+}
+.faq-item summary::after {
+  content: '+';
+  font-size: 1.4rem;
+  color: var(--blue);
+  transition: transform .2s;
+}
+.faq-item[open] summary::after {
+  content: '−';
+}
+
+.faq-item p {
+  padding: 0 1.5rem 1.2rem;
+  color: var(--muted);
+  line-height: 1.7;
+  font-size: .95rem;
+}
+
+.footer { text-align: center; padding: 2rem; color: var(--muted); font-size: .9rem; border-top: 1px solid #e2e8f0; margin-top: 3rem; }

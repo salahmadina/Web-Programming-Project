@@ -1,0 +1,49 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//d/xampp/mysql/bin/**)",
+      "Read(//d/xampp/mysql/**)",
+      "Bash(./mysqld.exe --console)",
+      "Bash(cp /d/xampp/mysql/backup/ib_logfile0 /d/xampp/mysql/data/ib_logfile0)",
+      "Bash(cp /d/xampp/mysql/backup/ib_logfile1 /d/xampp/mysql/data/ib_logfile1)",
+      "Bash(attrib -R \"d:/xampp/mysql/data/mysql/\"*.*)",
+      "Bash(attrib -R /S /D \"d:/xampp/mysql/data/mysql/\")",
+      "Bash(find /d/xampp/mysql/data/mysql -name \"*\" -exec attrib -R {} \\\\;)",
+      "Bash(attrib -R /d/xampp/mysql/data/ibdata1)",
+      "Bash(icacls \"D:\\\\\\\\xampp\\\\\\\\mysql\\\\\\\\data\\\\\\\\ibdata1\" /grant Everyone:F)",
+      "Bash(cmd.exe /c \"attrib -R -S -H \\\\\"D:\\\\xampp\\\\mysql\\\\data\\\\ibdata1\\\\\"\")",
+      "Bash(cmd.exe /c \"icacls \\\\\"D:\\\\xampp\\\\mysql\\\\data\\\\ibdata1\\\\\" /grant Everyone:\\(F\\)\")",
+      "Bash(cmd.exe /c \"icacls \\\\\"D:\\\\xampp\\\\mysql\\\\data\\\\\" /grant Everyone:\\(OI\\)\\(CI\\)F /T\")",
+      "Bash(cmd.exe /c \"taskkill /F /IM mysqld.exe\")",
+      "Bash(cmd.exe /c \"attrib \\\\\"D:\\\\xampp\\\\mysql\\\\data\\\\ibdata1\\\\\"\")",
+      "Bash(cmd.exe /c \"del /F \\\\\"D:\\\\xampp\\\\mysql\\\\data\\\\ibdata1\\\\\"\")",
+      "Bash(cmd.exe /c \"if exist \\\\\"D:\\\\xampp\\\\mysql\\\\data\\\\ib_logfile0\\\\\" del /F \\\\\"D:\\\\xampp\\\\mysql\\\\data\\\\ib_logfile0\\\\\"\")",
+      "Bash(cmd.exe /c \"if exist \\\\\"D:\\\\xampp\\\\mysql\\\\data\\\\ib_logfile1\\\\\" del /F \\\\\"D:\\\\xampp\\\\mysql\\\\data\\\\ib_logfile1\\\\\"\")",
+      "Bash(cmd.exe /c \"if exist \\\\\"D:\\\\xampp\\\\mysql\\\\data\\\\ibtmp1\\\\\" del /F \\\\\"D:\\\\xampp\\\\mysql\\\\data\\\\ibtmp1\\\\\"\")",
+      "Bash(./mysql_install_db.exe --datadir=\"D:/xampp/mysql/data\" --service=MySQL)",
+      "Bash(cmd.exe /c \"attrib \\\\\"D:\\\\xampp\\\\mysql\\\\backup\\\\ibdata1\\\\\"\")",
+      "Bash(cmd.exe /c \"attrib -R -S \\\\\"D:\\\\xampp\\\\mysql\\\\backup\\\\ibdata1\\\\\" && copy /Y \\\\\"D:\\\\xampp\\\\mysql\\\\backup\\\\ibdata1\\\\\" \\\\\"D:\\\\xampp\\\\mysql\\\\data\\\\ibdata1\\\\\" && attrib -R -S \\\\\"D:\\\\xampp\\\\mysql\\\\data\\\\ibdata1\\\\\"\")",
+      "Bash(cmd.exe /c \"attrib -R -S \\\\\"D:\\\\xampp\\\\mysql\\\\backup\\\\ib_logfile0\\\\\" && copy /Y \\\\\"D:\\\\xampp\\\\mysql\\\\backup\\\\ib_logfile0\\\\\" \\\\\"D:\\\\xampp\\\\mysql\\\\data\\\\ib_logfile0\\\\\" && attrib -R -S \\\\\"D:\\\\xampp\\\\mysql\\\\data\\\\ib_logfile0\\\\\"\")",
+      "Bash(cmd.exe /c \"attrib -R -S \\\\\"D:\\\\xampp\\\\mysql\\\\backup\\\\ib_logfile1\\\\\" && copy /Y \\\\\"D:\\\\xampp\\\\mysql\\\\backup\\\\ib_logfile1\\\\\" \\\\\"D:\\\\xampp\\\\mysql\\\\data\\\\ib_logfile1\\\\\" && attrib -R -S \\\\\"D:\\\\xampp\\\\mysql\\\\data\\\\ib_logfile1\\\\\"\")",
+      "Bash(cmd.exe /c \"attrib -R -S /S /D \\\\\"D:\\\\xampp\\\\mysql\\\\data\\\\mysql\\\\\"\")",
+      "Bash(cmd.exe /c \"attrib -R -S \\\\\"D:\\\\xampp\\\\mysql\\\\data\\\\ibdata1\\\\\"\")",
+      "Bash(cmd.exe /c \"taskkill /F /IM mysqld.exe /T\")",
+      "Bash(cmd.exe /c \"tasklist | findstr mysqld\")",
+      "Bash(cmd.exe /c \"dir \\\\\"D:\\\\xampp\\\\mysql\\\\data\\\\ibdata1\\\\\"\")",
+      "Bash(chmod 777 /d/xampp/mysql/data/ibdata1)",
+      "Bash(cmd.exe /c \"wmic process where name='mysqld.exe' get ProcessId,Name\")",
+      "Bash(kill -9 8372)",
+      "Bash(cmd.exe /c \"tasklist /FI \\\\\"IMAGENAME eq mysqld.exe\\\\\"\")",
+      "Bash(cmd.exe /c \"sc query MySQL\")",
+      "Bash(cmd.exe /c \"sc query mysql\")",
+      "Bash(cmd.exe /c \"net stop MySQL\")",
+      "Bash(cmd.exe /c \"net stop mysql\")",
+      "Bash(cmd.exe /c \"copy /Y \\\\\"D:\\\\xampp\\\\mysql\\\\backup\\\\ibdata1\\\\\" \\\\\"D:\\\\xampp\\\\mysql\\\\data\\\\ibdata1\\\\\" 2>&1\")",
+      "Bash(cmd.exe /c \"powershell -Command \\\\\"Get-Process -Name mysqld -ErrorAction SilentlyContinue | Select-Object Id, Name, StartTime\\\\\"\")"
+    ],
+    "additionalDirectories": [
+      "d:\\xampp\\mysql\\data",
+      "D:\\xampp\\mysql\\backup"
+    ]
+  }
+}

@@ -1,0 +1,168 @@
+/* ── Car Washes / Places Listing ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --blue: #2563EB; --sky: #0EA5E9;
+  --bg: #F0F4FF; --card: #FFFFFF;
+  --text: #1E293B; --muted: #64748B;
+  --border: #CBD5E1; --radius: 14px;
+  --shadow: 0 4px 20px rgba(37,99,235,.10);
+}
+
+body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); }
+
+/* ── Navbar ── */
+.navbar {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 1rem 2rem; background: var(--card);
+  box-shadow: 0 2px 12px rgba(0,0,0,.06);
+  position: sticky; top: 0; z-index: 100;
+}
+.nav-brand { font-size: 1.3rem; font-weight: 700; color: var(--blue); }
+.nav-links  { display: flex; gap: 1.5rem; list-style: none; align-items: center; }
+.nav-links a {
+  text-decoration: none; color: var(--muted);
+  font-weight: 500; font-size: .95rem; transition: color .2s;
+}
+.nav-links a:hover,
+.nav-links a.active { color: var(--blue); }
+.btn-logout {
+  padding: .4rem 1rem; border-radius: 8px;
+  background: #FEE2E2; color: #B91C1C !important;
+  font-weight: 600; transition: background .2s;
+}
+.btn-logout:hover { background: #FECACA !important; }
+
+/* ── Layout ── */
+.container { max-width: 1100px; margin: 0 auto; padding: 2.5rem 2rem; }
+
+.page-header { text-align: center; margin-bottom: 2.5rem; }
+.page-header h1 { font-size: 2.2rem; font-weight: 800; }
+.page-header p  { color: var(--muted); margin-top: .4rem; }
+
+.empty-msg { text-align: center; color: var(--muted); padding: 3rem; font-size: 1.05rem; }
+
+/* ── Places Grid ── */
+.places-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 2rem;
+}
+
+/* ── Place Card ── */
+.place-card {
+  background: var(--card);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform .2s, box-shadow .2s;
+}
+.place-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(37,99,235,.16);
+}
+
+/* ── Photo area ── */
+.place-photo {
+  width: 100%;
+  height: 190px;
+  overflow: hidden;
+  background: linear-gradient(135deg, #EFF6FF, #DBEAFE);
+}
+.place-photo img {
+  width: 100%; height: 100%; object-fit: cover; display: block;
+}
+.photo-placeholder {
+  width: 100%; height: 100%;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  gap: .5rem; color: var(--muted);
+}
+.photo-placeholder span { font-size: 3rem; }
+.photo-placeholder small { font-size: .8rem; }
+
+/* ── Card body ── */
+.place-body { padding: 1.4rem; flex: 1; display: flex; flex-direction: column; gap: 1rem; }
+
+.place-name { font-size: 1.25rem; font-weight: 700; color: var(--text); }
+.place-desc { font-size: .9rem; color: var(--muted); line-height: 1.6; }
+
+/* ── Services list ── */
+.services-list {
+  display: flex;
+  flex-direction: column;
+  gap: .6rem;
+  border-top: 1px solid #F1F5F9;
+  padding-top: .8rem;
+}
+
+.service-row {
+  display: flex;
+  align-items: center;
+  gap: .7rem;
+}
+
+.svc-badge {
+  display: inline-block;
+  padding: .22rem .7rem;
+  border-radius: 20px;
+  font-size: .78rem;
+  font-weight: 700;
+  color: #fff;
+  min-width: 90px;
+  text-align: center;
+}
+
+.svc-price {
+  flex: 1;
+  font-weight: 700;
+  color: var(--blue);
+  font-size: 1rem;
+}
+
+.btn-book {
+  padding: .4rem 1rem;
+  background: var(--blue); color: #fff;
+  border-radius: 8px; text-decoration: none;
+  font-weight: 600; font-size: .88rem;
+  transition: background .2s, transform .1s;
+  white-space: nowrap;
+}
+.btn-book:hover {
+  background: #1d4ed8;
+  transform: translateY(-1px);
+}
+.btn-book:active { transform: scale(.97); }
+
+/* ── Location button ── */
+.btn-location {
+  display: inline-block;
+  margin-top: auto;
+  padding: .55rem 1.1rem;
+  border-radius: 8px;
+  background: #F0FDF4;
+  color: #15803D;
+  font-weight: 600;
+  font-size: .88rem;
+  text-decoration: none;
+  border: 1.5px solid #BBF7D0;
+  transition: background .2s;
+  text-align: center;
+}
+.btn-location:hover { background: #DCFCE7; }
+
+.btn-location-placeholder {
+  cursor: default;
+  background: #F8FAFC;
+  color: var(--muted);
+  border-color: var(--border);
+}
+
+/* ── Footer ── */
+.footer {
+  text-align: center; padding: 2rem;
+  color: var(--muted); font-size: .9rem;
+  border-top: 1px solid #e2e8f0; margin-top: 2rem;
+}

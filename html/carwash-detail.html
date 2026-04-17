@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Car Wash Detail — SparkleWash</title>
+  <link rel="stylesheet" href="../css/carwash-detail.css">
+  <script>
+    /* Forward id param to PHP page */
+    const params = new URLSearchParams(window.location.search);
+    const id = params.get('id') || '';
+    if (id) window.location.replace('../php/carwash-detail.php?id=' + id);
+    else    window.location.replace('../php/carwashes.php');
+  </script>
+</head>
+<body>
+  <p style="text-align:center;margin-top:3rem;font-family:sans-serif;">Loading…</p>
+</body>
+</html>

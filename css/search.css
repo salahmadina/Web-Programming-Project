@@ -1,0 +1,84 @@
+/* ── Search Page (Student 2) ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --blue: #2563EB; --bg: #F0F4FF; --card: #FFFFFF;
+  --text: #1E293B; --muted: #64748B; --border: #CBD5E1;
+  --radius: 12px; --shadow: 0 4px 20px rgba(37,99,235,.10);
+}
+
+body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); }
+
+.navbar {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 1rem 2rem; background: var(--card);
+  box-shadow: 0 2px 12px rgba(0,0,0,.06); position: sticky; top: 0; z-index: 100;
+}
+.nav-brand { font-size: 1.3rem; font-weight: 700; color: var(--blue); }
+.nav-links  { display: flex; gap: 1.5rem; list-style: none; align-items: center; }
+.nav-links a { text-decoration: none; color: var(--muted); font-weight: 500; font-size: .95rem; transition: color .2s; }
+.nav-links a:hover, .nav-links a.active { color: var(--blue); }
+.btn-logout { padding: .4rem 1rem; border-radius: 8px; background: #FEE2E2; color: #B91C1C !important; font-weight: 600; }
+.btn-logout:hover { background: #FECACA !important; }
+
+.container { max-width: 1000px; margin: 0 auto; padding: 2.5rem 2rem; }
+
+.page-header { text-align: center; margin-bottom: 2rem; }
+.page-header h1 { font-size: 2.2rem; font-weight: 800; }
+.page-header p  { color: var(--muted); margin-top: .4rem; }
+.page-header strong { color: var(--blue); }
+
+.search-form {
+  display: flex; gap: .8rem;
+  background: var(--card); padding: 1.2rem;
+  border-radius: var(--radius); box-shadow: var(--shadow);
+  margin-bottom: 2rem;
+}
+.search-form input {
+  flex: 1; padding: .7rem 1rem;
+  border: 2px solid var(--border); border-radius: 8px;
+  font-size: .95rem; color: var(--text);
+  outline: none; transition: border-color .2s;
+}
+.search-form input:focus { border-color: var(--blue); }
+.search-form button {
+  padding: .7rem 1.5rem; background: var(--blue); color: #fff;
+  border: none; border-radius: 8px; font-weight: 600;
+  cursor: pointer; transition: background .2s;
+}
+.search-form button:hover { background: #1d4ed8; }
+
+.search-tips {
+  background: #F8FAFC; border-radius: var(--radius);
+  padding: 1.5rem; margin-bottom: 2rem; border: 1px solid #E2E8F0;
+}
+.search-tips h3 { margin-bottom: .8rem; color: var(--text); font-size: 1rem; }
+.search-tips ul  { list-style: none; }
+.search-tips li  { color: var(--muted); font-size: .9rem; padding: .3rem 0; }
+.search-tips em  { color: var(--blue); font-style: normal; font-weight: 600; }
+
+.no-results { text-align: center; padding: 3rem; }
+.no-results p  { color: var(--muted); font-size: 1.05rem; margin-bottom: 1.5rem; }
+.btn-back {
+  display: inline-block; padding: .7rem 1.5rem;
+  background: var(--blue); color: #fff;
+  border-radius: 8px; text-decoration: none; font-weight: 600;
+  transition: background .2s;
+}
+.btn-back:hover { background: #1d4ed8; }
+
+/* Cards (reuse same as carwashes.css) */
+.cards-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.5rem; }
+.card { background: var(--card); border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; transition: transform .2s, box-shadow .2s; display: flex; flex-direction: column; }
+.card:hover { transform: translateY(-5px); box-shadow: 0 12px 32px rgba(37,99,235,.16); }
+.card-icon { background: linear-gradient(135deg, #EFF6FF, #DBEAFE); padding: 1.8rem; font-size: 3.5rem; text-align: center; }
+.card-body { padding: 1.4rem; flex: 1; display: flex; flex-direction: column; }
+.badge { display: inline-block; padding: .25rem .75rem; border-radius: 20px; font-size: .78rem; font-weight: 700; color: #fff; margin-bottom: .8rem; }
+.card-body h2 { font-size: 1.2rem; margin-bottom: .5rem; }
+.card-desc { color: var(--muted); font-size: .9rem; line-height: 1.5; flex: 1; margin-bottom: 1rem; }
+.card-footer { display: flex; align-items: center; justify-content: space-between; padding-top: 1rem; border-top: 1px solid #F1F5F9; }
+.price { font-size: 1.25rem; font-weight: 800; color: var(--blue); }
+.btn-book { padding: .5rem 1.2rem; background: var(--blue); color: #fff; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: .9rem; transition: background .2s, transform .15s; }
+.btn-book:hover { background: #1d4ed8; transform: translateY(-1px); }
+
+.footer { text-align: center; padding: 2rem; color: var(--muted); font-size: .9rem; border-top: 1px solid #e2e8f0; margin-top: 2rem; }

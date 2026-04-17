@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Booking Confirmed — SparkleWash</title>
+  <link rel="stylesheet" href="../css/booking-confirm.css">
+  <script>
+    /* Forward id param to PHP confirmation page */
+    const id = new URLSearchParams(window.location.search).get('id') || '';
+    if (id) window.location.replace('../php/booking-confirm.php?id=' + id);
+    else    window.location.replace('../php/my-bookings.php');
+  </script>
+</head>
+<body>
+  <p style="text-align:center;margin-top:3rem;font-family:sans-serif;">Loading confirmation…</p>
+</body>
+</html>

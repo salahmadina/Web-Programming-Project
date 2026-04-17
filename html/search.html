@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Search — SparkleWash</title>
+  <link rel="stylesheet" href="../css/search.css">
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="nav-brand">&#9992; SparkleWash</div>
+    <ul class="nav-links">
+      <li><a href="../php/carwashes.php">Car Washes</a></li>
+      <li><a href="booking.html">Book Now</a></li>
+      <li><a href="../php/my-bookings.php">My Bookings</a></li>
+      <li><a href="../php/logout.php" class="btn-logout">Logout</a></li>
+    </ul>
+  </nav>
+
+  <main class="container">
+    <div class="page-header">
+      <h1>Search Car Washes</h1>
+      <p>Find the right wash for your car</p>
+    </div>
+
+    <form class="search-form" action="../php/search.php" method="GET">
+      <input type="text" name="q" placeholder="e.g. Premium, ProShine, Basic…" required>
+      <button type="submit">Search</button>
+    </form>
+
+    <div class="search-tips">
+      <h3>Search Tips</h3>
+      <ul>
+        <li>Search by name: <em>SparkleWash, GlossGarage</em></li>
+        <li>Search by type: <em>Basic, Premium, Full Service</em></li>
+        <li>Search by keyword: <em>wax, vacuum, exterior</em></li>
+      </ul>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <p>&copy; 2026 SparkleWash. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>

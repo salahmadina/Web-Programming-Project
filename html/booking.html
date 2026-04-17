@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book a Car Wash — SparkleWash</title>
+  <link rel="stylesheet" href="../css/booking.css">
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="nav-brand">&#9992; SparkleWash</div>
+    <ul class="nav-links">
+      <li><a href="../php/carwashes.php">Home</a></li>
+      <li><a href="booking.html" class="active">Book Now</a></li>
+      <li><a href="../php/my-bookings.php">My Bookings</a></li>
+      <li><a href="../php/logout.php" class="btn-logout">Logout</a></li>
+    </ul>
+  </nav>
+
+  <main class="container">
+    <div class="page-header">
+      <h1>Book a Car Wash</h1>
+      <p>Choose your date and time slot</p>
+    </div>
+
+    <!-- Alert from PHP redirect -->
+    <div id="alert" class="alert" style="display:none;"></div>
+
+    <div class="booking-card">
+
+      <div class="notice-box">
+        &#9888; <strong>Important:</strong> If you do not arrive within
+        <strong>10 minutes</strong> of your scheduled time, your booking will
+        be automatically cancelled.
+      </div>
+
+      <!-- Selected service summary (filled by JS from URL params) -->
+      <div id="serviceSummary" class="service-summary" style="display:none;">
+        <h3>Selected Service</h3>
+        <div class="summary-row"><span>Place:</span><strong id="sumPlace">—</strong></div>
+        <div class="summary-row"><span>Service:</span><strong id="sumType">—</strong></div>
+        <div class="summary-row"><span>Price:</span><strong id="sumPrice">—</strong></div>
+      </div>
+
+      <form id="bookingForm" action="../php/booking.php" method="POST" novalidate>
+
+        <!-- Hidden service_id passed from carwashes page -->
+        <input type="hidden" id="service_id" name="service_id">
+
+        <div class="form-group">
+          <label for="date">Date</label>
+          <input type="date" id="date" name="date" required>
+          <small class="hint">You can only book for today or tomorrow.</small>
+          <span class="field-error" id="dateErr"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="time_slot">Time Slot</label>
+          <select id="time_slot" name="time_slot" required>
+            <option value="">— Select a time —</option>
+            <option value="08:00">8:00 AM</option>
+            <option value="09:00">9:00 AM</option>
+            <option value="10:00">10:00 AM</option>
+            <option value="11:00">11:00 AM</option>
+            <option value="12:00">12:00 PM</option>
+            <option value="13:00">1:00 PM</option>
+            <option value="14:00">2:00 PM</option>
+            <option value="15:00">3:00 PM</option>
+            <option value="16:00">4:00 PM</option>
+            <option value="17:00">5:00 PM</option>
+            <option value="18:00">6:00 PM</option>
+          </select>
+          <span class="field-error" id="timeErr"></span>
+        </div>
+
+        <button type="submit" class="btn-submit">Confirm Booking</button>
+      </form>
+
+      <a href="../php/carwashes.php" class="back-link">&#8592; Back to Places</a>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <p>&copy; 2026 SparkleWash. All rights reserved.</p>
+  </footer>
+
+  <script src="../js/booking.js"></script>
+</body>
+</html>
