@@ -13,7 +13,6 @@ body {
     flex-direction: column;
 }
 
-/* NAV */
 nav {
     background: #0b3d91;
     padding: 0 40px;
@@ -45,7 +44,6 @@ nav .nav-links a.active {
     color: #4fc3f7;
 }
 
-/* MAIN CONTENT */
 main {
     flex: 1;
     max-width: 960px;
@@ -54,7 +52,6 @@ main {
     padding: 0 20px;
 }
 
-/* AUTH PAGES */
 .auth-wrapper {
     min-height: calc(100vh - 60px);
     display: flex;
@@ -79,7 +76,6 @@ main {
     text-align: center;
 }
 
-/* FORMS */
 .form-group {
     margin-bottom: 18px;
 }
@@ -148,7 +144,6 @@ main {
     font-weight: 600;
 }
 
-/* ALERT MESSAGES */
 .alert {
     padding: 12px 16px;
     border-radius: 8px;
@@ -160,7 +155,6 @@ main {
 .alert.success { background: #d4edda; color: #155724; border: 1px solid #c3e6cb; }
 .alert.error   { background: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; }
 
-/* HOME PAGE */
 .hero {
     background: linear-gradient(135deg, #0b3d91 0%, #1565c0 100%);
     color: #fff;
@@ -232,7 +226,6 @@ main {
 .feature-card h3   { color: #0b3d91; margin-bottom: 8px; }
 .feature-card p    { font-size: 0.9rem; color: #666; line-height: 1.6; }
 
-/* WASH PACKAGES */
 .packages {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -273,7 +266,6 @@ main {
 
 .package-card ul li::before { content: "✓ "; color: #0b3d91; font-weight: 700; }
 
-/* ABOUT PAGE */
 .about-card {
     background: #fff;
     border-radius: 14px;
@@ -310,7 +302,6 @@ main {
 
 .feature-list li::before { content: "✓ "; color: #0b3d91; font-weight: 700; }
 
-/* CONTACT PAGE */
 .contact-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -348,7 +339,6 @@ main {
 
 .contact-form h2 { color: #0b3d91; margin-bottom: 20px; }
 
-/* FOOTER */
 footer {
     background: #0b3d91;
     color: #8ab4e8;
@@ -359,7 +349,6 @@ footer {
 
 footer span { color: #4fc3f7; }
 
-/* RESPONSIVE */
 @media (max-width: 650px) {
     nav { padding: 0 16px; }
     .nav-links a { margin-left: 14px; font-size: 0.85rem; }

@@ -1,7 +1,4 @@
 <?php
-// Run ONCE at: http://localhost/Web-Programming-Project/setup.php
-// Delete this file after running it.
-
 $host = 'localhost';
 $user = 'root';
 $pass = '';
@@ -13,7 +10,6 @@ try {
     $pdo->exec("CREATE DATABASE IF NOT EXISTS sparkwash CHARACTER SET utf8 COLLATE utf8_general_ci");
     $pdo->exec("USE sparkwash");
 
-    // Users
     $pdo->exec("
         CREATE TABLE IF NOT EXISTS users (
             id         INT AUTO_INCREMENT PRIMARY KEY,
@@ -27,7 +23,6 @@ try {
         )
     ");
 
-    // Wash packages
     $pdo->exec("
         CREATE TABLE IF NOT EXISTS packages (
             id          INT AUTO_INCREMENT PRIMARY KEY,
@@ -37,7 +32,6 @@ try {
         )
     ");
 
-    // Insert default packages (ignore if already exist)
     $pdo->exec("
         INSERT IGNORE INTO packages (id, name, description, price) VALUES
         (1, 'Basic Wash',     'Exterior rinse, soap & rinse, air dry', 5.00),
@@ -45,7 +39,6 @@ try {
         (3, 'Premium Detail', 'Full wash + wax & polish, interior wipe-down, air freshener', 20.00)
     ");
 
-    // Bookings
     $pdo->exec("
         CREATE TABLE IF NOT EXISTS bookings (
             id           INT AUTO_INCREMENT PRIMARY KEY,
@@ -61,7 +54,6 @@ try {
         )
     ");
 
-    // Contact messages
     $pdo->exec("
         CREATE TABLE IF NOT EXISTS contacts (
             id         INT AUTO_INCREMENT PRIMARY KEY,
@@ -73,7 +65,6 @@ try {
         )
     ");
 
-    // Reviews
     $pdo->exec("
         CREATE TABLE IF NOT EXISTS reviews (
             id          INT AUTO_INCREMENT PRIMARY KEY,
@@ -82,8 +73,8 @@ try {
             rating      TINYINT UNSIGNED NOT NULL CHECK (rating BETWEEN 1 AND 5),
             comment     TEXT,
             created_at  TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-            FOREIGN KEY (user_id)   REFERENCES users(id)    ON DELETE CASCADE,
-            FOREIGN KEY (booking_id)REFERENCES bookings(id) ON DELETE CASCADE
+            FOREIGN KEY (user_id)    REFERENCES users(id)    ON DELETE CASCADE,
+            FOREIGN KEY (booking_id) REFERENCES bookings(id) ON DELETE CASCADE
         )
     ");
 

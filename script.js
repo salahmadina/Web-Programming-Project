@@ -1,9 +1,7 @@
-// Highlight active nav link
 document.querySelectorAll('.nav-links a').forEach(link => {
     if (link.href === location.href) link.classList.add('active');
 });
 
-// Show alert helper
 function showAlert(id, type, message) {
     const el = document.getElementById(id);
     if (!el) return;
@@ -12,7 +10,6 @@ function showAlert(id, type, message) {
     el.style.display = 'block';
 }
 
-// Show alerts based on URL query params (set by PHP redirects)
 const params = new URLSearchParams(location.search);
 
 if (params.get('error') === '1') {
@@ -30,7 +27,6 @@ if (params.get('registered') === '1' && document.getElementById('signinAlert'))
 if (params.get('sent') === '1' && document.getElementById('contactAlert'))
     showAlert('contactAlert', 'success', 'Message sent! We will get back to you soon.');
 
-// Sign-in client validation
 const signinForm = document.getElementById('signinForm');
 if (signinForm) {
     signinForm.addEventListener('submit', function (e) {
@@ -46,7 +42,6 @@ if (signinForm) {
     });
 }
 
-// Sign-up client validation
 const signupForm = document.getElementById('signupForm');
 if (signupForm) {
     signupForm.addEventListener('submit', function (e) {
@@ -64,7 +59,6 @@ if (signupForm) {
     });
 }
 
-// Contact client validation
 const contactForm = document.getElementById('contactForm');
 if (contactForm) {
     contactForm.addEventListener('submit', function (e) {

@@ -18,7 +18,6 @@ if (strlen($username) < 3)                          $errors[] = 'Username must b
 if (strlen($password) < 6)                          $errors[] = 'Password must be at least 6 characters.';
 
 if (empty($errors)) {
-    // Check for duplicate username / email
     $stmt = $pdo->prepare("SELECT id FROM users WHERE username = ? OR email = ?");
     $stmt->execute([$username, $email]);
     if ($stmt->fetch()) {
