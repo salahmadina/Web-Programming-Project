@@ -1,22 +1,73 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-    <title>Contact Us</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us – SparkWash</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-    <a href="main.html">Home</a> |
-    <a href="about.html">About Us</a> |
-    <a href="contact.html">Contact Us</a> |
-    <a href="signin.html">Logout</a>
+<nav>
+    <a class="logo" href="main.html">&#128167; SparkWash</a>
+    <div class="nav-links">
+        <a href="main.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="signin.html">Logout</a>
+    </div>
+</nav>
 
-    <hr>
+<main>
+    <div class="contact-grid">
+        <div class="contact-info">
+            <h2>Find Us</h2>
+            <div class="info-item">
+                <span class="icon">&#128205;</span>
+                <span>45 King Abdullah Street, Amman, Jordan</span>
+            </div>
+            <div class="info-item">
+                <span class="icon">&#128222;</span>
+                <span>+962 79 123 4567</span>
+            </div>
+            <div class="info-item">
+                <span class="icon">&#9993;</span>
+                <span>hello@sparkwash.jo</span>
+            </div>
+            <div class="info-item">
+                <span class="icon">&#128336;</span>
+                <span>Daily: 8:00 AM – 8:00 PM</span>
+            </div>
+        </div>
 
-    <h1>Contact Us</h1>
-    <p>Email: example@email.com</p>
+        <div class="contact-form">
+            <h2>Book or Ask Us</h2>
+            <div id="contactAlert" class="alert"></div>
+            <form id="contactForm" action="contact.php" method="POST">
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" name="name" placeholder="Your name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="you@email.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="subject">Subject</label>
+                    <input type="text" id="subject" name="subject" placeholder="Booking enquiry..." required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" placeholder="Tell us your preferred date, time, and package..." required></textarea>
+                </div>
+                <button type="submit" class="btn">Send Message</button>
+            </form>
+        </div>
+    </div>
+</main>
 
+<footer>&copy; 2025 <span>SparkWash</span>. All rights reserved.</footer>
+
+<script src="script.js"></script>
 </body>
-
 </html>

@@ -1,39 +1,60 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-    <title>Sign Up</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up – SparkWash</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-    <h1>Sign Up</h1>
+<nav>
+    <a class="logo" href="main.html">&#128167; SparkWash</a>
+    <div class="nav-links">
+        <a href="signin.html">Sign In</a>
+        <a href="signup.html">Sign Up</a>
+    </div>
+</nav>
 
-    <form action="signin.html">
-        Full Name:<br>
-        <input type="text" required><br><br>
+<div class="auth-wrapper">
+    <div class="card">
+        <h1>Create Account</h1>
+        <div id="signupAlert" class="alert"></div>
+        <form id="signupForm" action="signup.php" method="POST">
+            <div class="form-group">
+                <label for="fullname">Full Name</label>
+                <input type="text" id="fullname" name="fullname" placeholder="John Doe" required>
+            </div>
+            <div class="form-group">
+                <label for="age">Age</label>
+                <input type="number" id="age" name="age" placeholder="25" min="18" max="100" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" placeholder="+962 79 000 0000" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="you@email.com" required>
+            </div>
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" placeholder="Choose a username" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="Min 6 characters" required>
+            </div>
+            <button type="submit" class="btn">Create Account</button>
+        </form>
+        <div class="card-footer">
+            Already have an account? <a href="signin.html">Sign in</a>
+        </div>
+    </div>
+</div>
 
-        Age:<br>
-        <input type="number" required><br><br>
+<footer>&copy; 2025 <span>SparkWash</span>. All rights reserved.</footer>
 
-        Phone Number:<br>
-        <input type="tel" required><br><br>
-
-        Email:<br>
-        <input type="email" required><br><br>
-
-        Username:<br>
-        <input type="text" required><br><br>
-
-        Password:<br>
-        <input type="password" required><br><br>
-
-        <input type="submit" value="Sign Up">
-    </form>
-
-    <br>
-    <a href="signin.html">Sign In</a>
-
+<script src="script.js"></script>
 </body>
-
 </html>

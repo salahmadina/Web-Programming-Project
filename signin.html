@@ -1,27 +1,44 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-    <title>Sign In</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In – SparkWash</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-    <h1>Sign In</h1>
+<nav>
+    <a class="logo" href="main.html">&#128167; SparkWash</a>
+    <div class="nav-links">
+        <a href="signin.html">Sign In</a>
+        <a href="signup.html">Sign Up</a>
+    </div>
+</nav>
 
-    <form action="main.html">
-        Username:<br>
-        <input type="text" required><br><br>
+<div class="auth-wrapper">
+    <div class="card">
+        <h1>&#128167; Sign In</h1>
+        <div id="signinAlert" class="alert"></div>
+        <form id="signinForm" action="signin.php" method="POST">
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" placeholder="Enter your username" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="Enter your password" required>
+            </div>
+            <button type="submit" class="btn">Sign In</button>
+        </form>
+        <div class="card-footer">
+            Don't have an account? <a href="signup.html">Create one</a>
+        </div>
+    </div>
+</div>
 
-        Password:<br>
-        <input type="password" required><br><br>
+<footer>&copy; 2025 <span>SparkWash</span>. All rights reserved.</footer>
 
-        <input type="submit" value="Sign In">
-    </form>
-
-    <br>
-    <a href="signup.html">Create new account</a>
-
+<script src="script.js"></script>
 </body>
-
 </html>

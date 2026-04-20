@@ -1,22 +1,89 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-    <title>web</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home – SparkWash</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-    <a href="main.html">Home</a> |
-    <a href="about.html">About Us</a> |
-    <a href="contact.html">Contact Us</a> |
-    <a href="signin.html">Logout</a>
+<nav>
+    <a class="logo" href="main.html">&#128167; SparkWash</a>
+    <div class="nav-links">
+        <a href="main.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="signin.html">Logout</a>
+    </div>
+</nav>
 
-    <hr>
+<main>
+    <div class="hero">
+        <h1>Book Your <span>Car Wash</span> Online</h1>
+        <p>Fast, easy, and affordable car wash booking. Choose your package, pick a time slot, and drive in sparkling clean.</p>
+        <a class="hero-btn" href="contact.html">Book Now</a>
+    </div>
 
-    <h1>Home Page</h1>
-    <p>Welcome! You are signed in.</p>
+    <div class="features">
+        <div class="feature-card">
+            <div class="icon">&#128197;</div>
+            <h3>Easy Booking</h3>
+            <p>Schedule your car wash in seconds — pick a date, time, and package.</p>
+        </div>
+        <div class="feature-card">
+            <div class="icon">&#128663;</div>
+            <h3>Multiple Packages</h3>
+            <p>Basic rinse, full wash, or premium interior & exterior detail.</p>
+        </div>
+        <div class="feature-card">
+            <div class="icon">&#128205;</div>
+            <h3>Track Your Booking</h3>
+            <p>Know exactly when your car is ready with live status updates.</p>
+        </div>
+        <div class="feature-card">
+            <div class="icon">&#11088;</div>
+            <h3>Rate Your Experience</h3>
+            <p>Leave a review after each wash to help us improve our service.</p>
+        </div>
+    </div>
 
+    <div class="packages">
+        <div class="package-card">
+            <h3>&#128167; Basic Wash</h3>
+            <div class="price">5 JD</div>
+            <ul>
+                <li>Exterior rinse</li>
+                <li>Soap & rinse</li>
+                <li>Air dry</li>
+            </ul>
+        </div>
+        <div class="package-card popular">
+            <div class="badge">Most Popular</div>
+            <h3>&#10024; Full Wash</h3>
+            <div class="price">10 JD</div>
+            <ul>
+                <li>Exterior full wash</li>
+                <li>Interior vacuum</li>
+                <li>Window cleaning</li>
+                <li>Tire shine</li>
+            </ul>
+        </div>
+        <div class="package-card">
+            <h3>&#128142; Premium Detail</h3>
+            <div class="price">20 JD</div>
+            <ul>
+                <li>Full wash included</li>
+                <li>Interior wipe-down</li>
+                <li>Wax & polish</li>
+                <li>Air freshener</li>
+            </ul>
+        </div>
+    </div>
+</main>
+
+<footer>&copy; 2025 <span>SparkWash</span>. All rights reserved.</footer>
+
+<script src="script.js"></script>
 </body>
-
 </html>
