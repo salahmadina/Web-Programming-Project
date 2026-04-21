@@ -62,10 +62,14 @@ $userName = currentUserName();
 
   <!-- Navbar -->
   <nav class="navbar">
-    <div class="nav-brand">&#9992; SparkleWash</div>
+    <div class="nav-brand">&#128663;&#128166; SparkleWash</div>
     <ul class="nav-links">
-      <li><a href="carwashes.php" class="active">Home</a></li>
+      <li><a href="index.php">Home</a></li>
+      <li><a href="about.php">About</a></li>
+      <li><a href="contact.php">Contact</a></li>
+      <li><a href="carwashes.php" class="active">Car Washes</a></li>
       <li><a href="my-bookings.php">My Bookings</a></li>
+      <li><a href="profile.php">Profile</a></li>
       <li><a href="logout.php" class="btn-logout">Logout</a></li>
     </ul>
   </nav>

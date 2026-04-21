@@ -38,6 +38,9 @@ body {
   font-weight: 700;
   color: var(--blue);
   letter-spacing: -.3px;
+  display: flex;
+  align-items: center;
+  gap: .3rem;
 }
 .nav-links {
   display: flex;
@@ -69,6 +72,11 @@ body {
   color: var(--blue) !important;
 }
 .btn-nav.btn-outline:hover { background: var(--blue); color: #fff !important; }
+.btn-logout-nav {
+  background: #FEE2E2 !important;
+  color: #B91C1C !important;
+}
+.btn-logout-nav:hover { background: #FECACA !important; }
 
 /* ── Hero ── */
 .hero {

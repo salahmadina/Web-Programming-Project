@@ -15,13 +15,15 @@ body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); co
   box-shadow: 0 2px 12px rgba(0,0,0,.06);
   position: sticky; top: 0; z-index: 100;
 }
-.nav-brand { font-size: 1.3rem; font-weight: 700; color: var(--blue); }
+.nav-brand { font-size: 1.3rem; font-weight: 700; color: var(--blue); display: flex; align-items: center; gap: .3rem; }
 .nav-links  { display: flex; gap: 1.5rem; list-style: none; align-items: center; }
 .nav-links a { text-decoration: none; color: var(--muted); font-weight: 500; font-size: .95rem; transition: color .2s; }
 .nav-links a:hover, .nav-links a.active { color: var(--blue); }
 .btn-nav { padding: .45rem 1.1rem; border-radius: 8px; background: var(--blue); color: #fff !important; }
 .btn-nav.btn-outline { background: transparent; border: 2px solid var(--blue); color: var(--blue) !important; }
 .btn-nav.btn-outline:hover { background: var(--blue); color: #fff !important; }
+.btn-logout { padding: .4rem 1rem; border-radius: 8px; background: #FEE2E2; color: #B91C1C !important; font-weight: 600; transition: background .2s; }
+.btn-logout:hover { background: #FECACA !important; }
 
 .container { max-width: 1000px; margin: 0 auto; padding: 3rem 2rem; }
 
