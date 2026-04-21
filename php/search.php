@@ -1,5 +1,5 @@
 <?php
-/* ── Search Results Page (Student 2) ───────────────── */
+/* ── Search Results Page ────────────────────────────── */
 require_once 'db.php';
 require_once 'session.php';
 requireLogin();
@@ -23,76 +23,5 @@ if ($q) {
 $conn->close();
 
 $badge = ['Basic' => '#10B981', 'Premium' => '#2563EB', 'Full Service' => '#7C3AED'];
-?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Search Results — SparkleWash</title>
-  <link rel="stylesheet" href="../css/search.css">
-</head>
-<body>
 
-  <nav class="navbar">
-    <div class="nav-brand">&#128663;&#128166; SparkleWash</div>
-    <ul class="nav-links">
-      <li><a href="index.php">Home</a></li>
-      <li><a href="about.php">About</a></li>
-      <li><a href="contact.php">Contact</a></li>
-      <li><a href="carwashes.php">Car Washes</a></li>
-      <li><a href="my-bookings.php">My Bookings</a></li>
-      <li><a href="profile.php">Profile</a></li>
-      <li><a href="logout.php" class="btn-logout">Logout</a></li>
-    </ul>
-  </nav>
-
-  <main class="container">
-    <div class="page-header">
-      <h1>Search Results</h1>
-      <?php if ($q): ?>
-        <p>Showing results for: <strong>"<?= htmlspecialchars($q) ?>"</strong></p>
-      <?php endif; ?>
-    </div>
-
-    <!-- Search Form -->
-    <form class="search-form" method="GET" action="search.php">
-      <input type="text" name="q" placeholder="Search car washes…"
-             value="<?= htmlspecialchars($q) ?>" required>
-      <button type="submit">Search</button>
-    </form>
-
-    <?php if ($q && empty($washes)): ?>
-      <div class="no-results">
-        <p>&#128269; No results for "<?= htmlspecialchars($q) ?>". Try a different keyword.</p>
-        <a href="carwashes.php" class="btn-back">View All Car Washes</a>
-      </div>
-    <?php elseif ($washes): ?>
-    <div class="cards-grid">
-      <?php foreach ($washes as $w): ?>
-      <div class="card">
-        <div class="card-icon">&#9961;</div>
-        <div class="card-body">
-          <span class="badge" style="background:<?= $badge[$w['type']] ?>">
-            <?= htmlspecialchars($w['type']) ?>
-          </span>
-          <h2><?= htmlspecialchars($w['name']) ?></h2>
-          <p class="card-desc"><?= htmlspecialchars($w['description']) ?></p>
-          <div class="card-footer">
-            <span class="price">$<?= number_format($w['price'],2) ?></span>
-            <a href="../html/booking.html?wash_id=<?= $w['id'] ?>&wash_name=<?= urlencode($w['name']) ?>&price=<?= $w['price'] ?>"
-               class="btn-book">Book Now</a>
-          </div>
-        </div>
-      </div>
-      <?php endforeach; ?>
-    </div>
-    <?php endif; ?>
-  </main>
-
-  <footer class="footer">
-    <p>&copy; 2026 SparkleWash. All rights reserved.</p>
-  </footer>
-
-</body>
-</html>
+include '../html/search.html';
